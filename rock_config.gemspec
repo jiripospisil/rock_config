@@ -5,7 +5,7 @@ Gem::Specification.new do |gem|
   gem.authors       = ["Jiri Pospisil"]
   gem.email         = ["mekishizufu@gmail.com"]
   gem.description   = %q{TODO: Write a gem description}
-  gem.summary       = %q{TODO: Write a gem summary}
+  gem.summary       = %q{RockConfig allows you to use custom config files easily.}
   gem.homepage      = ""
 
   gem.files         = `git ls-files`.split($\)
