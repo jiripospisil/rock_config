@@ -6,7 +6,7 @@ TODO: Write a gem description
 
 Add this line to your application's Gemfile:
 
-    gem 'rock_config'
+    gem "rock_config"
 
 And then execute:
 
