@@ -33,7 +33,7 @@ RockConfig allows you to read these settings with an API like this:
     elastic\_config = RockConfig.for :elastic\_search
     elastic\_config.host # > 127.0.0.1
 
-RockConfig automatically chooses the current application environment. You select the environment youself
+RockConfig automatically chooses the current application environment. You select the environment yourself
 with: 
 
     RockConfig.for :elastic\_search, :production
