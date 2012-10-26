@@ -1,6 +1,6 @@
 # RockConfig
 
-TODO: Write a gem description
+RockConfig is a simple convention based library for reading and accessing config files.
 
 ## Installation
 
