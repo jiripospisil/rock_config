@@ -14,4 +14,8 @@ Gem::Specification.new do |gem|
   gem.name          = "rock_config"
   gem.require_paths = ["lib"]
   gem.version       = RockConfig::VERSION
+
+  gem.add_development_dependency "rspec", "~> 2.11.0"
+  gem.add_development_dependency "pry", "~> 0.9.10"
+  gem.add_development_dependency "pry-nav", "~> 0.2.2"
 end
