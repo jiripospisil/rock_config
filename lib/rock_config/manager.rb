@@ -1,16 +1,6 @@
-require "rock_config/manager"
+require "rock_config/scanner"
 
 module RockConfig
-  # Temporary evil implementation
-  class Scanner
-    def initialize(configuration)
-    end
-
-    def find(config_name)
-      nil
-    end
-  end
-
   class Manager
     def initialize(configuration, scanner = Scanner)
       @scanner = scanner.new(configuration)
