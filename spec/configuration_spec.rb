@@ -4,7 +4,7 @@ module RockConfig
   describe Configuration do
     it "has default scanned directory" do
       configuration = Configuration.new
-      configuration.scanned_directories.count.should eq 1
+      configuration.scanned_directories.should have(1).item
     end
 
     it "accepts scanned directories" do
