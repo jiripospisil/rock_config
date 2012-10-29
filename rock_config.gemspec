@@ -4,8 +4,8 @@ require File.expand_path('../lib/rock_config/version', __FILE__)
 Gem::Specification.new do |gem|
   gem.authors       = ["Jiri Pospisil"]
   gem.email         = ["mekishizufu@gmail.com"]
-  gem.description   = %q{TODO: Write a gem description}
   gem.summary       = %q{RockConfig allows you to use custom config files easily.}
+  gem.description   = %q{RockConfig allows you to use custom config files easily.}
   gem.homepage      = ""
 
   gem.files         = `git ls-files`.split($\)
