@@ -1,5 +1,3 @@
-require "rock_config/scanner"
-
 module RockConfig
   class Manager
     def initialize(configuration, scanner = Scanner)

@@ -2,6 +2,7 @@ require "rock_config/version"
 require "rock_config/environment_detector"
 require "rock_config/configuration"
 require "rock_config/manager"
+require "rock_config/scanner"
 
 module RockConfig
   class ConfigNotFound < Exception; end
