@@ -6,7 +6,7 @@ module RockConfig
 
     it "returns config if found" do
       result = mock("Config")
-      result.should_receive(:for_environment).with("development") { "yay" }
+      result.should_receive(:send).with("development") { "yay" }
 
       scanner = mock("Scanner")
       scanner.should_receive(:new) .with(configuration) { scanner }

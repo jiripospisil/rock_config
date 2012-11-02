@@ -7,7 +7,7 @@ module RockConfig
 
     def fetch(config_name, environment)
       if config = @configs[config_name]
-        config.for_environment environment
+        config.send environment
       end
     end
 
