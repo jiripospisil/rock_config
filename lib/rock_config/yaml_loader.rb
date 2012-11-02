@@ -3,15 +3,18 @@ require "yaml"
 module RockConfig
   class YamlLoader
     def find_at(directory, file_name)
-      full_name = full_name(file_name)
-      full_path = File.join(directory, full_name)
+      path = full_path(directory, file_name)
 
-      if readable?(full_path)
-        return Config.new(load_yaml_from(full_path))
+      if readable?(path)
+        return Config.new(load_yaml_from(path))
       end
     end
 
     private
+
+    def full_path(directory, file_name)
+      File.join(directory, full_name(file_name))
+    end
 
     def full_name(file_name)
       "#{file_name}.yml"
