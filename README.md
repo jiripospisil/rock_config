@@ -30,13 +30,13 @@ Given the file elastic_search.yml:
 
 RockConfig allows you to read these settings with an API like this:
 
-    elastic_config = RockConfig.for :elastic_search
+    elastic_config = RockConfig.for "elastic_search"
     elastic_config.host # > 127.0.0.1
 
 RockConfig automatically chooses the current application environment. You select the environment yourself
 with: 
 
-    RockConfig.for :elastic_search, :production
+    RockConfig.for "elastic_search", "production"
 
 RockConfig scans predefined directories for config files. By default, it tries to scan directory
 `config` in the project root. You can add more directories:
