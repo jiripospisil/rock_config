@@ -10,5 +10,14 @@ module RockConfig
 
       config.should_not be_nil
     end
+
+    it "throws exception when given valid path to an invalid file" do
+      directory = File.join(Dir.pwd, "spec", "fixtures") 
+      loader = YamlLoader.new
+
+      expect do
+        config = loader.find_at(directory, "database_invalid")
+      end.to raise_error(Psych::SyntaxError)
+    end
   end
 end
