@@ -25,7 +25,7 @@ module RockConfig
     end
 
     def load_yaml_from(path)
-      YAML.load(File.read(path))
+      YAML.load_file(path)
     end
   end
 end
