@@ -13,7 +13,7 @@ module RockConfig
         end
       end
 
-      nil
+      raise ConfigNotFound, "Config not found"
     end
   end
 end

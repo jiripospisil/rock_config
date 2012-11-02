@@ -13,7 +13,9 @@ module RockConfig
     let(:fixtures_path) { File.join(Dir.pwd, "spec", "fixtures") }
 
     it "finds nothing when the target doesnt exist" do
-      scanner.find("database").should be_nil
+      expect do
+        scanner.find("database")
+      end.to raise_error(ConfigNotFound)
     end
 
     it "scans additional directories" do
