@@ -2,7 +2,13 @@ require "spec_helper"
 
 module RockConfig
   describe Scanner do
-    let(:configuration) { Configuration.new }
+    let(:configuration) do
+      configuration = Configuration.new
+      configuration.scanned_directories << File.join(Dir.pwd, "config")
+      configuration.config_loaders << YamlLoader.new
+      configuration
+    end
+
     let(:scanner)       { Scanner.new(configuration) }
     let(:fixtures_path) { File.join(Dir.pwd, "spec", "fixtures") }
 

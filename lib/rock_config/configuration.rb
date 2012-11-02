@@ -1,10 +1,10 @@
 module RockConfig
   class Configuration
-    attr_accessor :scanned_directories
+    attr_accessor :scanned_directories, :config_loaders
 
     def initialize
-      default_directory = File.join(Dir.pwd, "config")
-      @scanned_directories = [default_directory]
+      @scanned_directories = []
+      @config_loaders = []
     end
   end
 end

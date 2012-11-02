@@ -29,7 +29,16 @@ module RockConfig
     end
 
     def configuration
-      @configuration ||= Configuration.new
+      @configuration ||= initialize_configuration
+    end
+
+    def initialize_configuration
+      configuration = Configuration.new
+
+      configuration.scanned_directories << File.join(Dir.pwd, "config")
+      configuration.config_loaders << YamlLoader.new
+
+      configuration
     end
 
     def manager
