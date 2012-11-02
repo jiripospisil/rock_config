@@ -18,19 +18,14 @@ module RockConfig
       manager_result.should eq("yay")
     end
 
-    it "yields if config not found" do
+    it "returns nul if config not found" do
       scanner = mock("Scanner")
       scanner.should_receive(:new) .with(configuration) { scanner }
       scanner.should_receive(:find).with("sample")      { nil }
 
       manager = Manager.new(configuration, scanner)
 
-      expect do
-        result = manager.fetch "sample", "development" do
-          raise Exception
-        end
-      end.to raise_error(Exception)
+      manager.fetch("sample", "development").should be_nil
     end
-
   end
 end

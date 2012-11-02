@@ -8,8 +8,6 @@ module RockConfig
     def fetch(config_name, environment)
       if config = @configs[config_name]
         config.for_environment environment
-      else
-        yield if block_given?
       end
     end
 

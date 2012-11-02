@@ -11,9 +11,7 @@ module RockConfig
 
   class << self
     def for(config_name, environment = detect_environment)
-      manager.fetch(config_name, environment) do
-        raise ConfigNotFound, "Config not found"
-      end
+      manager.fetch(config_name, environment)
     end
 
     def configure
