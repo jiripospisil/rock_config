@@ -3,6 +3,8 @@ require "rock_config/environment_detector"
 require "rock_config/configuration"
 require "rock_config/manager"
 require "rock_config/scanner"
+require "rock_config/yaml_loader"
+require "rock_config/config"
 
 module RockConfig
   class ConfigNotFound < Exception; end
