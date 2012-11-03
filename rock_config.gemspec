@@ -6,7 +6,7 @@ Gem::Specification.new do |gem|
   gem.email         = ["mekishizufu@gmail.com"]
   gem.summary       = %q{RockConfig allows you to use custom config files easily.}
   gem.description   = %q{RockConfig allows you to use custom config files easily.}
-  gem.homepage      = ""
+  gem.homepage      = "https://github.com/mekishizufu/rock_config"
 
   gem.files         = `git ls-files`.split($\)
   gem.executables   = gem.files.grep(%r{^bin/}).map{ |f| File.basename(f) }
