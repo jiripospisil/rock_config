@@ -3,7 +3,7 @@ require "spec_helper"
 module RockConfig
   describe Config do
     it "accepts a hash" do
-      hash = {foo: "bar"}
+      hash = {:foo => "bar"}
 
       config = Config.new(hash)
       config.raw.should eq(hash)
