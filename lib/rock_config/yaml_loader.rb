@@ -26,7 +26,7 @@ module RockConfig
 
     def load_yaml_from(path)
       YAML.load_file(path)
-    rescue Psych::SyntaxError => e
+    rescue Exception => e
       raise ConfigLoadError, e.message
     end
   end
