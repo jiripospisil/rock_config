@@ -17,7 +17,7 @@ module RockConfig
 
       expect do
         config = loader.find_at(directory, "database_invalid")
-      end.to raise_error(Psych::SyntaxError)
+      end.to raise_error(RockConfig::ConfigLoadError)
     end
   end
 end

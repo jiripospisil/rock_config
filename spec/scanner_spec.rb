@@ -15,7 +15,7 @@ module RockConfig
     it "finds nothing when the target doesnt exist" do
       expect do
         scanner.find("database")
-      end.to raise_error(ConfigNotFound)
+      end.to raise_error(ConfigNotFoundError)
     end
 
     it "scans additional directories" do
