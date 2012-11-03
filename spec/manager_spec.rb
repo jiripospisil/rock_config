@@ -18,14 +18,18 @@ module RockConfig
       manager_result.should eq("yay")
     end
 
-    it "returns nul if config not found" do
+    it "raises error if the config doesnt have the environment"  do
+      result = mock("Config")
+      result.should_receive(:send).with("development") { nil }
+
       scanner = mock("Scanner")
       scanner.should_receive(:new) .with(configuration) { scanner }
-      scanner.should_receive(:find).with("sample")      { nil }
+      scanner.should_receive(:find).with("sample")      { result }
 
       manager = Manager.new(configuration, scanner)
-
-      manager.fetch("sample", "development").should be_nil
+      expect do
+        manager_result  = manager.fetch "sample", "development"
+      end.to raise_error(EnvironmentNotFoundError)
     end
   end
 end
