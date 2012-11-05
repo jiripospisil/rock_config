@@ -7,7 +7,7 @@ module RockConfig
 
     def fetch(config_name, environment)
       if config = @configs[config_name]
-        if config_for_environment = config.public_send(environment)
+        if config_for_environment = config[environment]
           return config_for_environment
         else
           raise EnvironmentNotFoundError, 

@@ -1,5 +1,4 @@
 require "rock_config/version"
-require "rock_config/backports"
 require "rock_config/errors"
 require "rock_config/environment_detector"
 require "rock_config/configuration"

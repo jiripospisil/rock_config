@@ -50,5 +50,18 @@ module RockConfig
       config = Config.new(hash)
       config.development.elastic.host.should eq("localhost")
     end
+
+    it "supports accessing the values by brackets" do
+      hash = {
+        "development" => {
+          "elastic" => {
+            "host" => "localhost"
+          }
+        }
+      }
+
+      config = Config.new(hash)
+      config["development"]["elastic"]["host"].should eq("localhost")
+    end
   end
 end
