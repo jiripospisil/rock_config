@@ -10,8 +10,8 @@ module RockConfig
         if config_for_environment = config[environment]
           return config_for_environment
         else
-          raise EnvironmentNotFoundError, 
-            'Environment "%s" not found' % environment
+          raise EnvironmentNotFoundError,
+            'Environment "%s" not found for config file "%s"' % [environment, config_name]
         end
       end
     end
@@ -23,6 +23,5 @@ module RockConfig
         end
       end
     end
-
   end
 end

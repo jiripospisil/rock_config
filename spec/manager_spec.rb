@@ -2,7 +2,7 @@ require "spec_helper"
 
 module RockConfig
   describe Manager do
-    let(:configuration) do 
+    let(:configuration) do
       configuration = Configuration.new
       configuration.scanned_directories << File.join(Dir.pwd, "spec", "fixtures")
       configuration.config_loaders << YamlLoader.new
@@ -22,7 +22,8 @@ module RockConfig
 
       expect do
         manager_result  = manager.fetch "database", "me no exist yo"
-      end.to raise_error(EnvironmentNotFoundError)
+      end.to raise_error(EnvironmentNotFoundError,
+                         'Environment "me no exist yo" not found for config file "database"')
     end
   end
 end
