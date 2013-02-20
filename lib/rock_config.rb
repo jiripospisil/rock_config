@@ -21,10 +21,10 @@ module RockConfig
     private
 
     def detect_environment
-      @detected_environment ||= lambda do
-        detector = EnvironmentDetector.new(ENV)
-        detector.detect
-      end.call
+      @detected_environment ||= begin
+                                  detector = EnvironmentDetector.new(ENV)
+                                  detector.detect
+                                end
     end
 
     def configuration
