@@ -27,7 +27,7 @@ module RockConfig
       config.for_environment("I do not exist").should be_nil
     end
 
-    it "returns correct values when asked for" do
+    it "returns correct values" do
       hash = {
         "development" => {
           "host" => "localhost"
@@ -38,7 +38,20 @@ module RockConfig
       config.development.host.should eq("localhost")
     end
 
-    it "returns correct nested values when asked for" do
+    it "returns correct boolean values" do
+      hash = {
+        "development" => {
+          "test_mode" => true,
+          "computer_says" => false
+        }
+      }
+
+      config = Config.new(hash)
+      config.development.test_mode.should == true
+      config.development.computer_says.should == false
+    end
+
+    it "returns correct nested values" do
       hash = {
         "development" => {
           "elastic" => {

@@ -8,7 +8,10 @@ module RockConfig
         config.config_loaders << YamlLoader.new
       end
 
-      RockConfig.for("database", "development").magic_number.should eq(213)
+      config = RockConfig.for("database", "development")
+      config.magic_number.should eq(213)
+      config.test_false.should == false
+      config.test_true.should == true
     end
   end
 end

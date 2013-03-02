@@ -19,9 +19,8 @@ module RockConfig
     private
 
     def fetch(key, default = nil)
-      if value = @hash[key.to_s]
-        return value_or_config(value)
-      end
+      value = @hash[key.to_s]
+      value_or_config(value) unless value.nil?
     end
 
     def value_or_config(value)

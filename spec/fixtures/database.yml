@@ -1,5 +1,7 @@
 development:
   magic_number: 213
+  test_false: false
+  test_true: true
 
 test:
   magic_number: 214
