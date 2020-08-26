@@ -1,0 +1,10 @@
+development:
+  magic_number: <%= ENV['magic_number'] %>
+  test_false: false
+  test_true: true
+
+test:
+  magic_number: <%= ENV['magic_number'] %>
+
+production:
+  magic_number: <%= ENV['magic_number'] %>

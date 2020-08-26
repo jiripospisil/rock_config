@@ -1,4 +1,5 @@
 require "yaml"
+require "erb"
 
 module RockConfig
   class YamlLoader
@@ -25,7 +26,8 @@ module RockConfig
     end
 
     def load_yaml_from(path)
-      YAML.load_file(path)
+      template = ERB.new File.read path
+      YAML.load template.result binding
     rescue Exception => e
       raise ConfigLoadError, e.message
     end
